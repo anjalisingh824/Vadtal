@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <parameter name="browser" value="chrome"/>
+  <test name="firfoxtestCase">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="vadtalTesting.DonationReceiptValidation"/>
+    </classes>
+  </test> <!-- firfoxtestCase -->
+  <test name="chromeTestCase">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="vadtalTesting.DonationReceiptValidation"/>
+    </classes>
+  </test> <!-- chromeTestCase -->
+  <test name="firfoxtestCase(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="vadtalTesting.DonationReceiptValidation">
+        <methods>
+          <include name="testVadtal"/>
+          <include name="setUp"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- vadtalTesting.DonationReceiptValidation -->
+    </classes>
+  </test> <!-- firfoxtestCase(failed) -->
+  <test name="chromeTestCase(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="vadtalTesting.DonationReceiptValidation">
+        <methods>
+          <include name="testVadtal"/>
+          <include name="setUp"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- vadtalTesting.DonationReceiptValidation -->
+    </classes>
+  </test> <!-- chromeTestCase(failed) -->
+</suite> <!-- Failed suite [Suite] -->
