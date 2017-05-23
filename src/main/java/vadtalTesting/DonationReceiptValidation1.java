@@ -104,6 +104,54 @@ public class DonationReceiptValidation1 {
 			.sendKeys(ExcelUtils.getCellData(row, 7, Constants.DONATION_RECIEPT));
 			
 
+			// country
+			Function.dropDown(driver, row, 8, Constants.DONATION_RECIEPT);
+
+			// state
+			Function.dropDown(driver, row, 9, Constants.DONATION_RECIEPT);
+			
+			// city
+			driver.findElement(By
+					.xpath("//html/body/app-root/app-home/md-sidenav-layout/div[2]/div/app-donation-home/app-donation-receipt/div[1]/form/div[1]/div[14]/div[1]/input"))
+					.sendKeys(ExcelUtils.getCellData(row, 10, Constants.DONATION_RECIEPT));
+			
+			// area
+			Function.dropDown(driver, row, 11, Constants.DONATION_RECIEPT);
+			Thread.sleep(5000);
+
+			// select account
+			Function.dropDown(driver, row, 12, Constants.DONATION_RECIEPT);
+			Thread.sleep(5000);
+
+			// select prasad
+			Function.dropDown(driver, row, 13, Constants.DONATION_RECIEPT);
+			
+			//rupees
+			driver.findElement(By.xpath("//input[@type='text'][following-sibling::label[contains(text(),'Rupees')]]"))
+			.sendKeys(ExcelUtils.getCellData(row, 14, Constants.DONATION_RECIEPT));
+			
+			
+			//quantity
+			driver.findElement(By.xpath("//input[@type='text'][following-sibling::label[contains(text(),'Quantity')]]"))
+			.sendKeys(ExcelUtils.getCellData(row, 15, Constants.DONATION_RECIEPT));
+			
+			
+			//note
+			driver.findElement(By.xpath("//input[@type='text'][following-sibling::label[contains(text(),'Enter note here')]]"))
+			.sendKeys(ExcelUtils.getCellData(row, 16, Constants.DONATION_RECIEPT));
+			
+			
+			// click on the special note checkbox
+			driver.findElement(By
+					.xpath("//html/body/app-root/app-home/md-sidenav-layout/div[2]/div/app-donation-home/app-donation-receipt/div[1]/form/div[1]/div[22]/md-checkbox/label/div"))
+					.click();
+			Thread.sleep(2000);
+			
+			//special note
+			driver.findElement(By.xpath("//input[@type='text'][following-sibling::label[contains(text(),'Enter special note here')]]"))
+			.sendKeys(ExcelUtils.getCellData(row, 17, Constants.DONATION_RECIEPT));
+			
+			
 			Thread.sleep(5000);
 
 		}
